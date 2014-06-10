@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>CementJS - by @zessx</title>
+		<style type='text/css'>
+			body { margin: 0; }
+			* { box-sizing: border-box; }
+
+			.container {
+				padding: 30px;
+			}
+			.item {
+				background: tomato; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container"> 
+			<div class="item"></div>
+			<div class="item" data-h="2"></div>
+			<div class="item" data-w="2"></div>
+			<div class="item" data-w="3"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item" data-h="3"></div>
+			<div class="item"></div>
+			<div class="item" data-w="2" data-h="2"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</body>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="cement.js"></script>
+	<script>
+		$(function() {
+			$('.container').cement({
+				columns: 5
+			});
+		});
+	</script>
+</html>
