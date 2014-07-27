@@ -19,6 +19,7 @@ a { color: inherit; text-decoration: none; }
 pre { text-align: left; }
 .clear { clear: both; }
 
+.container { display: none; }
 .container > * { background: #efefef; padding: 10px; opacity: .7; transition: opacity .3s, border .3s; }
 .container > *:hover,
 .container > *:active { opacity: 1; border: 3px solid #333; }
@@ -34,10 +35,3 @@ pre { text-align: left; }
 dt { font-weight: 400; line-height: 40px; }
 dt > span { font-weight: 200; font-size: 80%; }
 dd { margin-left: 30px; font-size: 80%; }
-
-/* no-js fallback */
-.container > * { width: 178px; height: 178px; overflow: hidden; display: block; margin: 5px 5px 0 0; float: left; }
-.container > [data-w="2"] { width: 361px; }
-.container > [data-w="3"] { width: 544px; }
-.container > [data-h="2"] { height: 361px; }
-.container > [data-h="3"] { height: 544px; }
