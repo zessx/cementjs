@@ -3,6 +3,7 @@
 
         var defaults = {
                 'columns': 4,
+                'brickSelector': '> *',
                 'horizontalGutter': 5,
                 'verticalGutter': 5,
                 'transitionDuration': '.4s',
@@ -23,7 +24,7 @@
 
                 // Set variables
                 var unit = (container.width() - _.horizontalGutter * (_.columns - 1)) / _.columns,
-                    items = container.find('> *'),
+                    items = container.find(_.brickSelector),
                     matrix = new Array(_.columns + 1).join('0');
 
                 // Iterate over items
