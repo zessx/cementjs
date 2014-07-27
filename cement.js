@@ -2,13 +2,22 @@
     $.fn.cement=function(options) {
 
         var defaults = {
-                'columns': 4,
-                'brickSelector': '> *',
-                'horizontalGutter': 5,
-                'verticalGutter': 5,
-                'transitionDuration': '.4s',
-            },
-            _ = $.extend(defaults, options),
+            'columns': 4,
+            'columnMinWidth': 170,
+            'brickSelector': '> *',
+            'horizontalGutter': 5,
+            'verticalGutter': 5,
+            'transitionDuration': '.4s',
+        };
+
+        for(property in options) {
+            if(defaults.hasOwnProperty(property) !== options.hasOwnProperty(property)) {
+                console.log('CementJS doesn\'t support the ' + property + ' property.');
+                delete options[property];
+            }
+        }
+
+        var _ = $.extend(defaults, options),
             PARAM_WIDTH = 'w',
             PARAM_HEIGHT = 'h';
 
