@@ -1,50 +1,50 @@
 (function($) {
     $.fn.cement=function(options) {
-        
+
         var defaults = {
                 'columns': 4,
                 'horizontalGutter': 5,
                 'verticalGutter': 5,
                 'transitionDuration': '.4s',
-            },   
+            },
             _ = $.extend(defaults, options),
             PARAM_WIDTH = 'w',
             PARAM_HEIGHT = 'h';
-        
+
         function refresh(event) {
             $(event.data.containers).each(function() {
                 var container = $(this);
-                
+
                 // Set default values
-                if(container.css('position') === 'inherit')
+                if(container.css('position') === 'static')
                     container.css('position', 'relative');
                 var paddingTop = parseInt(container.css('paddingTop').replace(/[^0-9-]/g, '')),
                     paddingLeft = parseInt(container.css('paddingLeft').replace(/[^0-9-]/g, ''));
-                
+
                 // Set variables
                 var unit = (container.width() - _.horizontalGutter * (_.columns - 1)) / _.columns,
                     items = container.find('> *'),
                     matrix = new Array(_.columns + 1).join('0');
-                
+
                 // Iterate over items
                 items.each(function() {
                     var item = $(this);
-                    
+
                     // Set default values
                     if(typeof item.data(PARAM_WIDTH) === 'undefined')
                         item.data(PARAM_WIDTH, 1);
                     if(typeof item.data(PARAM_HEIGHT) === 'undefined')
                         item.data(PARAM_HEIGHT, 1);
-                    
+
                     // Fix boundaries
                     if(item.data(PARAM_WIDTH) > _.columns)
                         item.data(PARAM_WIDTH, _.columns);
-                    
+
                     // Define position
                     var index = -1,
                         min = 0,
                         brick = Array.apply(
-                                null, 
+                                null,
                                 new Array(item.data(PARAM_HEIGHT))
                             ).map(function() {
                                 return new Array(item.data(PARAM_WIDTH) + 1).join('1')
@@ -54,7 +54,7 @@
                         search = brick.replace(/0/g, '.').replace(/1/g, '0');
                     do {
                         // Search for an available place
-                        var match = matrix.substr(min).match(search); 
+                        var match = matrix.substr(min).match(search);
                         if(!match) {
                             // Not enough place ? Add a row
                             matrix += new Array(item.data(PARAM_WIDTH) + 1).join('0');
@@ -70,7 +70,7 @@
                             }
                         }
                     } while(index == -1);
-                    
+
                     // Update matrix
                     var n = search.length,
                         prefix = matrix.substr(0, index),
@@ -81,7 +81,7 @@
                         matrix += parseInt(segment.charAt(i)) || parseInt(brick.charAt(i));
                     }
                     matrix += suffix;
-         
+
                     // Positioning element
                     var x = Math.floor(index / _.columns),
                         y = index % _.columns;
@@ -95,15 +95,15 @@
                         'height': (item.data(PARAM_HEIGHT) * unit + _.verticalGutter * (item.data(PARAM_HEIGHT) - 1)) + 'px',
                     });
                 });
-                
+
                 container.on('DOMNodeInserted DOMNodeRemoved', {containers: container}, refresh);
             });
         }
-        
+
         $(window).on('resize', {containers: $(this)}, refresh);
         refresh({data: {containers: $(this)}});
-        
+
         return this;
-        
+
     };
 })(jQuery);
