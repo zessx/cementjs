@@ -121,6 +121,10 @@
                     });
                 });
 
+                // Update container height (avoid 0px height because of absolute potitioning)
+                var rows = Math.ceil(matrix.length / _.columns);
+                container.css('height', rows * unit + _.verticalGutter * (rows - 1));
+
                 container.on('DOMNodeInserted DOMNodeRemoved', {containers: container}, refresh);
             });
         }
