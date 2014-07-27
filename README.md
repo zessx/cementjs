@@ -1,4 +1,0 @@
-cement.js
-=========
-
-Masonry alternative
