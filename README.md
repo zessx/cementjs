@@ -56,10 +56,6 @@ Option               | Default value | Description
 `verticalGutter`     | `5`           | Size of vertical gutters. 
 `transitionDuration` | `.2s`         | Transition duration. 
 
-Comparison
-----------
-
-
 Legals
 ------
 - Author : [zessx](https://github.com/zessx)
