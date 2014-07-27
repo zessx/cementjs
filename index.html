@@ -6,14 +6,13 @@
 		<style type='text/css'>
 			body {
 				margin: 0;
-				width: 100%;
 			}
 			* {
 				box-sizing: border-box;
 			}
 
 			.container {
-				width: 960px;
+				max-width: 960px;
 				margin: 0 auto;
 				padding: 30px;
 			}
@@ -42,7 +41,8 @@
 	<script>
 		$(function() {
 			$('.container').cement({
-				columns: 5
+				columns: 5,
+				columnMinWidth: 175
 			});
 		});
 	</script>
