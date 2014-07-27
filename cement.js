@@ -30,8 +30,10 @@
                 // Set default values
                 if(container.css('position') === 'static')
                     container.css('position', 'relative');
+                container.css('box-sizing', 'border-box');
                 var paddingTop = parseInt(container.css('paddingTop').replace(/[^0-9-]/g, '')),
-                    paddingLeft = parseInt(container.css('paddingLeft').replace(/[^0-9-]/g, ''));
+                    paddingLeft = parseInt(container.css('paddingLeft').replace(/[^0-9-]/g, '')),
+                    paddingBottom = parseInt(container.css('paddingBottom').replace(/[^0-9-]/g, ''));
 
                 // Adapt the number of columns if the container is too tight
                 _.columns = _.columnsMax + 1;
@@ -114,8 +116,8 @@
                         'position': 'absolute',
                         'transition-property': 'top, left, bottopm, right',
                         'transition-duration': _.transitionDuration,
-                        'top': (x * unit + _.horizontalGutter * (x - 1) + paddingTop) + 'px',
-                        'left': (y * unit + _.verticalGutter * (y - 1) + paddingLeft) + 'px',
+                        'top': (x * (unit + _.horizontalGutter) + paddingTop) + 'px',
+                        'left': (y * (unit + _.verticalGutter) + paddingLeft) + 'px',
                         'width': (item.data(PARAM_WIDTH) * unit + _.horizontalGutter * (item.data(PARAM_WIDTH) - 1)) + 'px',
                         'height': (item.data(PARAM_HEIGHT) * unit + _.verticalGutter * (item.data(PARAM_HEIGHT) - 1)) + 'px',
                     });
@@ -123,7 +125,7 @@
 
                 // Update container height (avoid 0px height because of absolute potitioning)
                 var rows = Math.ceil(matrix.length / _.columns);
-                container.css('height', rows * unit + _.verticalGutter * (rows - 1));
+                container.css('height', rows * unit + _.verticalGutter * (rows - 1) + paddingTop + paddingBottom);
 
                 container.on('DOMNodeInserted DOMNodeRemoved', {containers: container}, refresh);
             });
