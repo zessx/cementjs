@@ -3,7 +3,7 @@
 
 [CementJS](http://smarchal.com/cementjs) is a jQuery plugin, which will allow you to quickly present a list of elements under a grid layout. It is a [Masonry](http://masonry.desandro.com/) alternative.
 
-Unlike Masonry, CementJS create a real grid : every row has the same height, and every column has the same width. This doesn't mean your elements can't span over several columns and/or rows.
+Unlike Masonry, CementJS create a real grid : **every row has the same height**, and **every column has the same width**. This doesn't mean your elements can't span over several columns and/or rows.
 
 Installation
 ------------
