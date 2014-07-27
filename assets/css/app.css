@@ -23,6 +23,7 @@ pre { text-align: left; }
 .container > *:hover,
 .container > *:active { opacity: 1; border: 3px solid #333; }
 .item-masonry { background: #dd2266; color: #efefef; padding-top: 40px; text-align: center; }
+.item-options { background: #56268a; color: #efefef; }
 .item-licence { text-align: center; padding-top: 15px;}
 .item-licence img { margin-top: 15px; }
 .item-author { text-align: center; padding-top: 40px; }
