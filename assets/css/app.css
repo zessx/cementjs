@@ -1,0 +1,37 @@
+/* Reset : http://meyerweb.com/eric/tools/css/reset/ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+* { box-sizing: border-box; }
+
+/* General */
+body, html { font-family: 'Source Sans Pro', sans-serif; font-size: 30px; font-weight: 200; margin: 0; }
+body > * { max-width: 960px; margin: 0 auto; padding: 20px; }
+a { color: inherit; text-decoration: none; }
+pre { text-align: left; }
+.clear { clear: both; }
+
+/* Header */
+header { text-align: center; }
+
+/* Container */
+.container > * { background: #efefef; padding: 10px; opacity: .7; transition: opacity .3s, border .3s; }
+.container > *:hover,
+.container > *:active { opacity: 1; border: 3px solid #333; }
+.item-masonry { background: #dd2266; color: #efefef; padding-top: 40px; text-align: center; }
+.item-licence { text-align: center; }
+.item-licence img { margin-top: 15px; }
+.item-author { text-align: center; padding-top: 45px; }
+.item-social { padding: 0; }
+.item-social img { width: 100%; }
+.item-paypal { padding-top: 30px; text-align: center; }
+.item-paypal img { margin-top: 15px; }
