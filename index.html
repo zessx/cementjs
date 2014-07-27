@@ -9,6 +9,11 @@
 		<meta name="keywords" content="CementJS, JS, jQuery, Masonry, grid, zessx">
 		<meta property="og:image" content="assets/img/logo.png">
 
+		<meta property="og:title" content="CementJS - A Masonry alternative" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://smarchal.com/cementjs" />
+		<meta property="og:image" content="http://smarchal.com/cementjs/assets/img/logo.png" />
+
 		<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
@@ -29,67 +34,60 @@
 	</head>
 	<body>
 
-		<header>
-			<a href="http://smarchal.com/cementjs"><img src="assets/img/logo.png" alt="CementJS" width="336"></a>
-		</header>
-
 		<section id="example" class="container">
 
-			<a class="item-masonry" href="http://masonry.desandro.com/">
-				CementJS is a Masonry alternative.
-			</a>
+			<h1 class="item-fullimg"><a href="http://smarchal.com/cementjs" title="CementJS"><img src="assets/img/logo.png" alt="CementJS"></a></h1>
+
+			<a class="item-fullimg" href="https://github.com/zessx/cementjs"><img src="assets/img/github.png" alt="Hosted on GitHub"></a>
+
+			<a class="item-masonry" href="http://masonry.desandro.com/">CementJS is a Masonry alternative.</a>
 
 			<div data-w="2">
 				Basic usage:<br><br>
-<pre>$('.container').cement({
-  columns: 5
-});</pre>
+				<pre>$('#container').cement();</pre><br>
+				And voilà!
 			</div>
-			<div data-w="2" data-h="2">
+
+			<div data-w="3" data-h="3">
 				Options availables:<br><br>
-				<ul>
-					<li>- columns</li>
-					<li>- columnMinWidth</li>
-					<li>- brickSelector</li>
-					<li>- horizontalGutter</li>
-					<li>- verticalGutter</li>
-					<li>- transitionDuration</li>
-				</ul>
-			</div>
-			<div data-w="3">
-
-			</div>
-			<div>
-
-			</div>
-			<div>
-
-			</div>
-			<div data-h="3">
-
-			</div>
-			<div>
-
-			</div>
-			<div data-w="2" data-h="2">
-
+				<dl>
+					<dt>columns <span>(4)</span></dt>
+					<dd>Number of columns in your grid.</dd>
+					<dt>columnMinWidth <span>(0)</span></dt>
+					<dd>Minimum width the columns can have. Under this width, a column is removed. Set to 0 to keep the same number of columns, whatever their width.</dd>
+					<dt>brickSelector <span>('> *')</span></dt>
+					<dd>Target elements inside the container.</dd>
+					<dt>horizontalGutter <span>(5)</span></dt>
+					<dd>Size of horizontal gutters.</dd>
+					<dt>verticalGutter <span>(5)</span></dt>
+					<dd>Size of vertical gutters.</dd>
+					<dt>transitionDuration <span>('.2s')</span></dt>
+					<dd>Transition duration.</dd>
+				</dl>
 			</div>
 
-			<a class="item-social" title="Share on Facebook" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Facebook', 1, true]);" href="https://www.facebook.com/sharer/sharer.php?u=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/facebook.jpg" alt="Share on Facebook"></a>
-			<a class="item-social" title="Share on Twitter" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Twitter', 1, true]);" href="https://twitter.com/share?url=http://smarchal.com/cementjs/&text=%23CementJS - A Masonry alternative.&via=zessx" target="_blank"><img src="assets/img/twitter.jpg" alt="Share on Twitter"></a>
-			<a class="item-social" title="Share on Google+" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Google Plus', 1, true]);" href="https://plus.google.com/share?url=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/googleplus.jpg" alt="Share on Google+"></a>
-			<a class="item-social" title="Share on Stumble Upon" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Stumbleupon', 1, true]);" href="http://www.stumbleupon.com/submit?url=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/stumbleupon.jpg" alt="Share on Stumble Upon"></a>
+			<div>CementJS supports browser RESIZE</div>
 
-			<a class="item-author" data-w="3" href="https://twitter.com/zessx">
+			<div>CementJS supports ADDING or REMOVING dynamically</div>
+
+			<a class="item-fullimg" title="Share on Facebook" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Facebook', 1, true]);" href="https://www.facebook.com/sharer/sharer.php?u=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/facebook.jpg" alt="Share on Facebook"></a>
+
+			<a class="item-fullimg" title="Share on Twitter" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Twitter', 1, true]);" href="https://twitter.com/share?url=http://smarchal.com/cementjs/&text=%23CementJS - A Masonry alternative.&via=zessx" target="_blank"><img src="assets/img/twitter.jpg" alt="Share on Twitter"></a>
+
+			<a class="item-fullimg" title="Share on Google+" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Google Plus', 1, true]);" href="https://plus.google.com/share?url=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/googleplus.jpg" alt="Share on Google+"></a>
+
+			<a class="item-fullimg" title="Share on Stumble Upon" onclick="_gaq.push(['_trackEvent', 'Social', 'Share', 'Stumbleupon', 1, true]);" href="http://www.stumbleupon.com/submit?url=http://smarchal.com/cementjs/" target="_blank"><img src="assets/img/stumbleupon.jpg" alt="Share on Stumble Upon"></a>
+
+			<a class="item-licence" href="http://opensource.org/licenses/MIT" rel="license" target="_blank">
+				Under MIT licence<br>
+				<img alt="Licence MIT" src="assets/img/license-mit.png" />
+			</a>
+
+			<a class="item-author" data-w="3" href="https://smarchal.com">
 				CementJS was made with ♥ by<br>
 				Samuel Marchal (zessx)<br>
 				Feel free to contact me by via Twitter
 			</div>
-
-			<a class="item-licence" href="http://opensource.org/licenses/MIT" rel="license" target="_blank">
-				Work under MIT licence<br>
-				<img alt="Licence MIT" src="assets/img/license-mit.png" />
-			</a>
 
 			<a class="item-paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KTYWBM9HJMMSE&lc=FR&item_name=Buy%20a%20coffee%20to%20zessx%20%28Samuel%20Marchal%29&currency_code=EUR&bn=PP%2dDonationsBF%3abmac%3aNonHosted" onclick="_gaq.push(['_trackEvent', 'Donate', 'Donate', 'Paypal', 1, true]);" target="_blank">
 				Want to thanks me ?

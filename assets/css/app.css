@@ -13,25 +13,30 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 * { box-sizing: border-box; }
 
-/* General */
 body, html { font-family: 'Source Sans Pro', sans-serif; font-size: 30px; font-weight: 200; margin: 0; }
-body > * { max-width: 960px; margin: 0 auto; padding: 20px; }
+body > * { max-width: 960px; margin: 0 auto; color: #333; padding: 20px; }
 a { color: inherit; text-decoration: none; }
 pre { text-align: left; }
 .clear { clear: both; }
 
-/* Header */
-header { text-align: center; }
-
-/* Container */
 .container > * { background: #efefef; padding: 10px; opacity: .7; transition: opacity .3s, border .3s; }
 .container > *:hover,
 .container > *:active { opacity: 1; border: 3px solid #333; }
 .item-masonry { background: #dd2266; color: #efefef; padding-top: 40px; text-align: center; }
-.item-licence { text-align: center; }
+.item-licence { text-align: center; padding-top: 15px;}
 .item-licence img { margin-top: 15px; }
-.item-author { text-align: center; padding-top: 45px; }
-.item-social { padding: 0; }
-.item-social img { width: 100%; }
+.item-author { text-align: center; padding-top: 40px; }
+.item-fullimg { padding: 0; }
+.item-fullimg img { width: 100%; }
 .item-paypal { padding-top: 30px; text-align: center; }
 .item-paypal img { margin-top: 15px; }
+dt { font-weight: 400; line-height: 40px; }
+dt > span { font-weight: 200; font-size: 80%; }
+dd { margin-left: 30px; font-size: 80%; }
+
+/* no-js fallback */
+.container > * { width: 178px; height: 178px; overflow: hidden; display: block; margin: 5px 5px 0 0; float: left; }
+.container > [data-w="2"] { width: 361px; }
+.container > [data-w="3"] { width: 544px; }
+.container > [data-h="2"] { height: 361px; }
+.container > [data-h="3"] { height: 544px; }
