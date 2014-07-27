@@ -1,4 +1,4 @@
-![CementJS](logo.png)
+![CementJS](cementjs.png)
 =====================
 
 [CementJS](http://smarchal.com/cementjs) is a jQuery plugin, which will allow you to quickly present a list of elements under a grid layout. It is a [Masonry](http://masonry.desandro.com/) alternative.
@@ -47,12 +47,14 @@ Options
 
 CementJS provides a few options, to be more flexible :
 
-- `columns` (default: `4`) : Number of columns in your grid.
-- `columnMinWidth` (default: `0`) : Minimum width the columns can have. Under this width, a column is removed. Set to 0 to keep the same number of columns, whatever their width.
-- `brickSelector` (default `'> *'`) : Target elements inside the container.
-- `horizontalGutter` (default: `5`) : Size of horizontal gutters.
-- `verticalGutter` (default: `5`) : Size of vertical gutters.
-- `transitionDuration` (default: `'.2s'`) : Transition duration.
+Option               | Default value | Description 
+-------------------- | ------------- | -----
+`columns`            | `4`           | Number of columns in your grid. 
+`columnMinWidth`     | `0`           | Minimum width the columns can have. Under this width, a column is removed.<br>Set to 0 to keep the same number of columns, whatever their width. 
+`brickSelector`      | `> *`         | Target elements inside the container. 
+`horizontalGutter`   | `5`           | Size of horizontal gutters. 
+`verticalGutter`     | `5`           | Size of vertical gutters. 
+`transitionDuration` | `.2s`         | Transition duration. 
 
 Comparison
 ----------
