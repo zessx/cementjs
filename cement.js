@@ -3,11 +3,11 @@
 
         var defaults = {
             'columns': 4,
-            'columnMinWidth': 170,
+            'columnMinWidth': 0,
             'brickSelector': '> *',
             'horizontalGutter': 5,
             'verticalGutter': 5,
-            'transitionDuration': '.4s',
+            'transitionDuration': '.2s',
         };
 
         for(property in options) {
@@ -21,6 +21,8 @@
             PARAM_WIDTH = 'w',
             PARAM_HEIGHT = 'h';
 
+        _.columnsMax = _.columns;
+
         function refresh(event) {
             $(event.data.containers).each(function() {
                 var container = $(this);
@@ -30,6 +32,14 @@
                     container.css('position', 'relative');
                 var paddingTop = parseInt(container.css('paddingTop').replace(/[^0-9-]/g, '')),
                     paddingLeft = parseInt(container.css('paddingLeft').replace(/[^0-9-]/g, ''));
+
+                // Adapt the number of columns if the container is too tight
+                _.columns = _.columnsMax + 1;
+                var unit = 0;
+                do {
+                    _.columns--;
+                    unit = (container.width() - _.horizontalGutter * (_.columns - 1)) / _.columns
+                } while(unit < _.columnMinWidth && _.columns != 1);
 
                 // Set variables
                 var unit = (container.width() - _.horizontalGutter * (_.columns - 1)) / _.columns,
@@ -47,8 +57,13 @@
                         item.data(PARAM_HEIGHT, 1);
 
                     // Fix boundaries
-                    if(item.data(PARAM_WIDTH) > _.columns)
+                    if(typeof item.data(PARAM_WIDTH) + '-max' !== 'undefined') {
+                        item.data(PARAM_WIDTH, item.data(PARAM_WIDTH + '-max'));
+                    }
+                    if(item.data(PARAM_WIDTH) > _.columns) {
+                        item.data(PARAM_WIDTH + '-max', item.data(PARAM_WIDTH));
                         item.data(PARAM_WIDTH, _.columns);
+                    }
 
                     // Define position
                     var index = -1,
