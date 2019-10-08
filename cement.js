@@ -114,7 +114,7 @@
                         y = index % _.columns;
                     item.css({
                         'position': 'absolute',
-                        'transition-property': 'top, left, bottopm, right',
+                        'transition-property': 'top, left, bottom, right',
                         'transition-duration': _.transitionDuration,
                         'top': (x * (unit + _.horizontalGutter) + paddingTop) + 'px',
                         'left': (y * (unit + _.verticalGutter) + paddingLeft) + 'px',
